@@ -1,0 +1,3 @@
+[submodule "Z3sec"]
+	path = Z3sec
+	url = https://github.com/IoTsec/Z3sec.git
