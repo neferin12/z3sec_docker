@@ -95,4 +95,7 @@ COPY ./Z3sec/patch/z3sec_zigbee.grc ~/.scapy/radio/
 # Installing Z3sec
 RUN python setup.py install
 
+# Run program to init /root/.config/z3sec/touchlink_crypt.ini
+RUN z3sec_control --help
+
 WORKDIR /root
