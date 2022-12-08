@@ -1,3 +1,16 @@
 [submodule "Z3sec"]
 	path = Z3sec
 	url = https://github.com/IoTsec/Z3sec.git
+[submodule "dependencies/scapy-radio"]
+	path = dependencies/scapy-radio
+	url = https://github.com/BastilleResearch/scapy-radio.git
+[submodule "dependencies/killerbee"]
+	path = dependencies/killerbee
+	url = https://github.com/riverloopsec/killerbee.git
+[submodule "dependencies/gr-foo"]
+	path = dependencies/gr-foo
+	url = https://github.com/bastibl/gr-foo.git
+	branch = main
+[submodule "dependencies/gr-ieee802-15-4"]
+	path = dependencies/gr-ieee802-15-4
+	url = https://github.com/bastibl/gr-ieee802-15-4.git
