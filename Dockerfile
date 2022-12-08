@@ -94,3 +94,5 @@ COPY ./Z3sec/patch/z3sec_zigbee.grc ~/.scapy/radio/
 
 # Installing Z3sec
 RUN python setup.py install
+
+WORKDIR /root
