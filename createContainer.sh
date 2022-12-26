@@ -1,11 +1,14 @@
 #!/bin/bash
 
 # Select Image
-IMAGE=ghcr.io/neferin12/z3sec:latest
-#IMAGE=z3sec
-
-# Update image
-docker pull ghcr.io/neferin12/z3sec:latest
+if [ "$LOCAL" = true ] ; then
+    echo "Using local image"
+    IMAGE=z3sec
+else
+    IMAGE=ghcr.io/neferin12/z3sec:latest
+    # Update image
+    docker pull $IMAGE
+fi
 
 # Create data folder
 DATADIR="$(pwd)"/data
