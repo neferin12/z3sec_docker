@@ -90,7 +90,7 @@ WORKDIR /Z3sec/source
 RUN uhd_images_downloader
 
 # Installing z3sec_zigbee.grc
-COPY ./Z3sec/patch/z3sec_zigbee.grc ~/.scapy/radio/
+COPY ./Z3sec/patch/z3sec_zigbee.grc /root/.scapy/radio/
 
 # Installing Z3sec
 RUN python setup.py install
@@ -98,4 +98,12 @@ RUN python setup.py install
 # Run program to init /root/.config/z3sec/touchlink_crypt.ini
 RUN z3sec_control --help
 
+# Installing convenience packages
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    DEBIAN_FRONTEND=noninteractive apt-get -y install \
+    vim
+
 WORKDIR /root
+
+CMD [ "/bin/bash" ]

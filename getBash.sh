@@ -1,7 +1,18 @@
 #!/bin/bash
 
-# Update image
-docker pull ghcr.io/neferin12/z3sec:latest
+# Make sure the Docker container exists
+if [ ! "$(docker ps -aq -f name=z3sec)" ]; then
+    ./createContainer.sh
+fi
+
+# Start the Docker container
+docker start z3sec
+
+# Clear the terminal
+clear
 
 # Run the Docker container
-docker run -it ghcr.io/neferin12/z3sec /bin/bash
+docker attach z3sec
+
+# Stop the Docker container
+docker stop z3sec
