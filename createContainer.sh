@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Select Image
-#IMAGE=ghcr.io/neferin12/z3sec:latest
-IMAGE=z3sec
+IMAGE=ghcr.io/neferin12/z3sec:latest
+#IMAGE=z3sec
 
 # Update image
 docker pull ghcr.io/neferin12/z3sec:latest
