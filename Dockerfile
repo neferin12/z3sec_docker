@@ -52,7 +52,8 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     sudo \
     wireshark \
     software-properties-common \
-    python-setuptools
+    python-setuptools \
+    vim
 
 
 # Creating global gnuradio config
@@ -97,12 +98,6 @@ RUN python setup.py install
 
 # Run program to init /root/.config/z3sec/touchlink_crypt.ini
 RUN z3sec_control --help
-
-# Installing convenience packages
-RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
-    --mount=type=cache,target=/var/lib/apt,sharing=locked \
-    DEBIAN_FRONTEND=noninteractive apt-get -y install \
-    vim
 
 WORKDIR /root
 
