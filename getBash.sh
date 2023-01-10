@@ -5,6 +5,8 @@ if [ ! "$(docker ps -aq -f name=z3sec)" ]; then
     ./createContainer.sh
 fi
 
+xhost +
+
 # Start the Docker container
 docker start z3sec
 
@@ -16,3 +18,5 @@ docker attach z3sec
 
 # Stop the Docker container
 docker stop z3sec
+
+xhost -

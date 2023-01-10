@@ -21,4 +21,5 @@ docker create --name z3sec \
 --interactive --tty `# make container interactive` \
 --privileged -v /dev/bus/usb:/dev/bus/usb `# connect USB` \
 --mount type=bind,source="$DATADIR",target=/root/data `# mount data folder` \
+-e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix `# display` \
 "$IMAGE"
