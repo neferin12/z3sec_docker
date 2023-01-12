@@ -1,6 +1,3 @@
-[submodule "Z3sec"]
-	path = Z3sec
-	url = https://github.com/IoTsec/Z3sec.git
 [submodule "dependencies/scapy-radio"]
 	path = dependencies/scapy-radio
 	url = https://github.com/BastilleResearch/scapy-radio.git
@@ -14,3 +11,6 @@
 [submodule "dependencies/gr-ieee802-15-4"]
 	path = dependencies/gr-ieee802-15-4
 	url = https://github.com/bastibl/gr-ieee802-15-4.git
+[submodule "Z3sec"]
+	path = Z3sec
+	url = https://github.com/neferin12/Z3sec.git

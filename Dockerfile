@@ -53,8 +53,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     wireshark \
     software-properties-common \
     python-setuptools \
-    vim \
-    uhd-host
+    vim
 
 
 # Creating global gnuradio config
