@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# check if docker is installed
+if ! command -v docker &> /dev/null
+then
+    echo "docker could not be found, please install it"
+    exit
+fi
+
+
 # Make sure the Docker container exists
 if [ ! "$(docker ps -aq -f name=z3sec)" ]; then
     ./createContainer.sh

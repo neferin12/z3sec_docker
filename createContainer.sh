@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# check if docker is installed
+if ! command -v docker &> /dev/null
+then
+    echo "docker could not be found, please install it"
+    exit
+fi
+
 # Select Image
 if [ "$LOCAL" = true ] ; then
     echo "Using local image"
