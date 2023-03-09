@@ -28,3 +28,6 @@ docker attach z3sec
 docker stop z3sec
 
 xhost -
+
+# Clear the terminal
+clear
