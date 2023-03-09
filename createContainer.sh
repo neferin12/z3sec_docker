@@ -7,6 +7,11 @@ then
     exit
 fi
 
+# make sure docker container does not exist
+if [ "$(docker ps -aq -f name=z3sec)" ]; then
+    exit 0
+fi
+
 # Select Image
 if [ "$LOCAL" = true ] ; then
     echo "Using local image"
