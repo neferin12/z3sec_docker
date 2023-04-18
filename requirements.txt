@@ -1,0 +1,8 @@
+ipython
+pycrypto
+pycairo
+pygtk2
+numpy
+pyserial
+sphinx
+pyusb

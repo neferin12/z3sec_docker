@@ -44,7 +44,7 @@ jobs:
                   tags: |
                     type=ref,event=branch
                     type=ref,event=tag
-                    type=raw,value=ubuntu_18.04
+                    type=raw,value=ubuntu_22.04
             - name: Build and push
               uses: docker/build-push-action@v3
               with:

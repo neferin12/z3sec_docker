@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 # Caching
 RUN rm -f /etc/apt/apt.conf.d/docker-clean; echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' > /etc/apt/apt.conf.d/keep-cache
 # Install apt packages with docker BuildKit cache
@@ -13,7 +13,6 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     git \
     gnuradio \
     gnuradio-dev \
-    ipython \
     libarmadillo-dev \
     libblas-dev \
     libboost-chrono-dev \
@@ -35,16 +34,9 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     liblapack-dev \
     liblog4cpp5-dev \
     mercurial \
-    python-cairo \
-    python-crypto \
-    python-dev \
-    python-gtk2 \
-    python-numpydoc \
-    python-serial \
+    python2-dev \
     python-setuptools \
-    python-sphinx \
     python-tk \
-    python-usb \
     swig \
     swig3.0 \
     tcpdump \
@@ -55,6 +47,8 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     python-setuptools \
     vim
 
+COPY requirements.txt /Z3sec/requirements.txt
+RUN pip install -r /Z3sec/requirements.txt
 
 # Creating global gnuradio config
 COPY ./Z3sec/patch/grc.conf /etc/gnuradio/conf.d/grc.conf
