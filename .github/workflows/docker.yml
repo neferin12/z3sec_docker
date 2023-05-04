@@ -5,6 +5,7 @@ on:
     push:
       branches:
         - main
+        - debian
 
 env:
     REGISTRY: ghcr.io
@@ -44,7 +45,7 @@ jobs:
                   tags: |
                     type=ref,event=branch
                     type=ref,event=tag
-                    type=raw,value=ubuntu_18.04
+                    type=raw,value=debian-buster
             - name: Build and push
               uses: docker/build-push-action@v3
               with:

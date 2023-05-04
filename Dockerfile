@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM python:2.7-buster
 # Caching
 RUN rm -f /etc/apt/apt.conf.d/docker-clean; echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' > /etc/apt/apt.conf.d/keep-cache
 # Install apt packages with docker BuildKit cache
