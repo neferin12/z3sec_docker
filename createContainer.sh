@@ -15,7 +15,7 @@ fi
 # Select Image
 if [ "$LOCAL" = true ] ; then
     echo "Using local image"
-    IMAGE=z3sec
+    IMAGE=z3sec:local
 else
     IMAGE=ghcr.io/neferin12/z3sec:latest
     # Update image
