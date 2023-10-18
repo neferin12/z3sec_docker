@@ -74,14 +74,14 @@ RUN python setup.py install
 # Installing gr-foo
 COPY ./dependencies/gr-foo/ /Z3sec/dependencies/gr-foo/
 WORKDIR /Z3sec/dependencies/gr-foo/build
-RUN cmake .. && make
+RUN cmake .. && make -j$(nproc)
 RUN make install
 RUN ldconfig
 
 # Installing gr-ieee802.15.4
 COPY ./dependencies/gr-ieee802-15-4/ /Z3sec/dependencies/gr-ieee802-15-4/
 WORKDIR /Z3sec/dependencies/gr-ieee802-15-4/build
-RUN cmake .. && make
+RUN cmake .. && make -j$(nproc)
 RUN make install
 RUN ldconfig
 
