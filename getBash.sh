@@ -19,7 +19,7 @@ xhost +
 docker start z3sec
 
 # Clear the terminal
-clear
+printf '\33[H\33[2J'
 
 # Run the Docker container
 docker attach z3sec
@@ -30,4 +30,4 @@ docker stop z3sec
 xhost -
 
 # Clear the terminal
-clear
+printf '\33[H\33[2J'
